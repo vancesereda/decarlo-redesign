@@ -46,7 +46,7 @@ const Layout = ({ children }) => (
           
           
 
-            <Col md={{xs: 12, md: 9}} className="page-detail">
+            <Col sm={{size: 7}} className="page-detail">
               <span className="sm-scrn">
                 <div>
                   {children}

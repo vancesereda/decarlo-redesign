@@ -36,10 +36,10 @@ exports.createPages = async ({ graphql, actions }) => {
         allProject {
           edges {
             node {
-              slideshow
               id
               setNumber
               to
+              slideshow
               text
               className
               captions
