@@ -1,0 +1,8 @@
+.carousel.slide  {
+    position: absolute;
+    max-width: 1200px;
+}
+.img {
+    max-width: 100%;
+}  
+
