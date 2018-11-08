@@ -2,14 +2,6 @@ import React, { Component } from 'react'
 import script_images from './scriptImages'
 import Draggable from 'react-draggable'
 
-const RandomHandler = (num) => {
-    const randomNum = Math.random()*num/2;
-    if (num > 800) {
-       randomNum+= 400;  // if it's greater than 700, make sure to add 300 
-    } 
-    return randomNum;
-   
-}
 export default class RandomPhoto extends Component {
 
     constructor(props) {
@@ -55,10 +47,18 @@ export default class RandomPhoto extends Component {
     }
     handleCoords = (width, height) => {
         this.setState({
-            left: Array.apply(null, Array(101)).map(()=> RandomHandler(width)),
+            left: Array.apply(null, Array(101)).map(()=> {
+                if (width > 600) {
+                    return Math.random()*(width/2)+300;
+                } else {
+                    return Math.random()*(width/2);
+                }
+            }),
             top: Array.apply(null, Array(101)).map(()=>{
-                if (height < 800) {
-                 return RandomHandler(height-400)+ 400
+                if (height < 850) {
+                    return  Math.random()*(height-500) + 350
+                } else {
+                    return Math.random()*height/2;
                 }
             })
         })
@@ -66,7 +66,7 @@ export default class RandomPhoto extends Component {
 
     render() {
         const { zIndex , click, left, top , width} = this.state;
-        
+        console.log(top)
         return (
             <div onClick={this.newPicture} className="random-photo">
                     <div className="center-twenties">
