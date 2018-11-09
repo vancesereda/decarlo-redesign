@@ -3,7 +3,10 @@ import React, { Component, Fragment } from 'react'
 import { graphql } from 'gatsby'
 import ContentMap from '../components/contentMap'
 import '../css/pageDetail.css'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import Parser from 'html-react-parser'
+import NukaSlider from '../components/NukaSlider'
 
 export default class PageDetail extends Component {
   render() {
@@ -12,7 +15,6 @@ export default class PageDetail extends Component {
       <Layout>
         <h1>{project.className ==='tags' ? '' : project.id}</h1>
         {Parser(`${project.text}`)}
-        
         <ContentMap 
             slideshow={project.slideshow}
             setNumber={project.setNumber}/>

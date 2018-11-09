@@ -36,8 +36,8 @@ exports.createPages = async ({ graphql, actions }) => {
         allProject {
           edges {
             node {
-              id
               setNumber
+              id
               to
               slideshow
               text
